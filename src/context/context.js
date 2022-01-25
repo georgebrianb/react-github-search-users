@@ -3,7 +3,7 @@ import mockUser from "./mockData.js/mockUser";
 import mockRepos from "./mockData.js/mockRepos";
 import mockFollowers from "./mockData.js/mockFollowers";
 import axios from "axios";
-import Followers from "../components/Followers";
+// import Followers from "../components/Followers";
 
 const rootUrl = "https://api.github.com";
 const GithubContext = React.createContext();
@@ -50,7 +50,7 @@ const GithubProvider = ({ children }) => {
     );
     if (response) {
       setGithubUser(response.data);
-      const { login, followers_url, repos_url } = response.data;
+      const { followers_url, repos_url } = response.data;
 
       // await all Promises to settle
       await Promise.allSettled([
